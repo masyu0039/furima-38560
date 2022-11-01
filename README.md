@@ -16,12 +16,14 @@
 | day                | string              | null: false               |
 ### Association
 
+* has_many :buyers
 * has_many :items
 * has_many :comments 
 * has_many :messages 
 * has_many :wallets  
 * has_many :reviews  
 * has_many :orders   
+
 
 ## buyers table
 
