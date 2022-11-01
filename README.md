@@ -47,8 +47,7 @@
 | text        | text       | null: false,                   |
 | condition   | integer    | null: false                    |
 | price       | integer    | null: false                    |
-| text        | text       | null: false,                   |
-| condition   | integer    | null: false                    |
+
 
 ### Association
 
