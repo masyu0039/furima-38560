@@ -19,9 +19,9 @@
 - has_many : messages
 - has_many : likes
 - has_many : items
-- has_many : order
+- has_many : orders
 - belongs_to : brand
-- belongs_to : categories
+- belongs_to : category
 
 
 
@@ -31,7 +31,7 @@
 |-------------|------------|--------------------------------|
 |   name      |  string    | null:false                     | 
 |   price     |  integer   | null: false                    |
-| description |  string    | null: false                    |
+| description |  text      | null: false                    |
 |  status     |  string    | null: false                    |
 |prefecture_id|  integer   | null: false                    |
 |   size      |  string    | null: false                    |
@@ -45,6 +45,7 @@
 - belongs_to : user
 - has_many : comments
 - has_many : likes
+- has_one  : order
 
 
 
@@ -54,9 +55,9 @@
 
 | Column      | Type       | Options                        |
 |-------------|------------|--------------------------------|
-|  user       | references | null: false, foreign_key: true |
+|credential   | references | null: false, foreign_key: true |
 |  postal_code| string     | null: false                    |
-|  prefecture | string     | null: false                    |
+|prefecture_id| integer    | null: false                    |
 |  city       | string     | null: false                    |
 | address     | string     | null: false                    |
 |building_name| string     |                                |
@@ -67,18 +68,17 @@
 
 - belongs_to : credential
 
-## credential table
+## credentials table
 | Column      | Type       | Options                        |
 |-------------|------------|--------------------------------|
-|  provider   | string     | null: false                    |
-|  uid        | string     | null: false                    |
 |  user       | references | null: false, foreign_key: true |
 |  item       | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to : user
-* has_many :shippings
+- belongs_to : items
+* has_one : shippings
 
 ## comments table
 | Column      | Type       | Options                        |
@@ -90,12 +90,6 @@
 
 - belongs_to : user
 - belongs_to : items
-
-## categories table
-| Column      | Type       | Options                        |
-|-------------|------------|--------------------------------|
-|  name       | string     | null: false                    |
-|  ancestry   | string     |                                |
 
 
 ### Association
