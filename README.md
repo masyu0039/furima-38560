@@ -38,7 +38,6 @@
 |   size      |  string    | null: false                    |
 |   postage   | string     | null: false                    |
 |shipping_date| string     | null: false                    |
-|  brand      | references | null: false, foreign_key: true |
 |buyer_id     | integer    |                                |
 |reservation_email| string |                                |
 |   user_id   | references | index:true, foreign_key: true  |
@@ -102,7 +101,6 @@
 | Column      | Type       | Options                        |
 |-------------|------------|--------------------------------|
 |  comment    | text       | null: false                    |
-|  user       | references | null: false, foreign_key: true |
 |  user_id    | references | null: false, foreign_key: true |
 
 ### Association
