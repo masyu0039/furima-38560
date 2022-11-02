@@ -78,6 +78,7 @@
 ### Association
 
 - belongs_to : user
+* has_many :shippings
 
 ## comments table
 | Column      | Type       | Options                        |
