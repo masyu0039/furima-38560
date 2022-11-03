@@ -19,7 +19,7 @@
 - has_many : messages
 - has_many : likes
 - has_many : items
-- has_many : orders
+- has_many : credentials
 - belongs_to : brand
 - belongs_to : category
 
@@ -32,11 +32,11 @@
 |   name      |  string    | null:false                     | 
 |   price     |  integer   | null: false                    |
 | description |  text      | null: false                    |
-|  status     |  string    | null: false                    |
+|  status_id  |  integer   | null: false                    |
 |prefecture_id|  integer   | null: false                    |
-|   size      |  string    | null: false                    |
-|   postage   | string     | null: false                    |
-|shipping_date| string     | null: false                    |
+|   size_id   |  integer   | null: false                    |
+|   postage_id| integer    | null: false                    |
+|shipping_date_id| integer | null: false                    |
 |   user      | references | null: false, foreign_key: true |
 
 
@@ -45,7 +45,7 @@
 - belongs_to : user
 - has_many : comments
 - has_many : likes
-- has_one  : order
+- has_one  : credential
 
 
 
@@ -78,7 +78,7 @@
 
 - belongs_to : user
 - belongs_to : items
-* has_one : shippings
+* has_one : shipping
 
 ## comments table
 | Column      | Type       | Options                        |
