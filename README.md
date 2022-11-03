@@ -77,7 +77,7 @@
 ### Association
 
 - belongs_to : user
-- belongs_to : items
+- belongs_to : item
 * has_one : shipping
 
 ## comments table
@@ -92,9 +92,6 @@
 - belongs_to : items
 
 
-### Association
-
-- has_many : items
 
 ## likes table
 | Column      | Type       | Options                        |
