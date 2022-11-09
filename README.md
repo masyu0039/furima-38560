@@ -34,7 +34,7 @@
 | description |  text      | null: false                    |
 |  status_id  |  integer   | null: false                    |
 |prefecture_id|  integer   | null: false                    |
-|   size_id   |  integer   | null: false                    |
+|  category_id|  integer   | null: false                    |
 |   postage_id| integer    | null: false                    |
 |shipping_date_id| integer | null: false                    |
 |   user      | references | null: false, foreign_key: true |
