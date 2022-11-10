@@ -123,9 +123,9 @@
     <ul class='item-lists'>
 
       <%# 商品データがある場合は、eachメソッドで一覧表示する %>
-    <% @items.each do |item| %>
+    <% if @items.each do |item| %>
       <li class='list'>
-        <%= link_to "#" do %>
+        <%= link_to item_path(item) do %>
         <div class='item-img-content'>
         <%= image_tag item.image.variant(resize: '500x500'), class: "item-img" if item.image.attached? %>
           <%# 商品が売れていればsold outを表示(.present?でも可) %>
@@ -169,5 +169,6 @@
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 
+<% end %>
 <% end %>
 <%= render "shared/footer" %>
