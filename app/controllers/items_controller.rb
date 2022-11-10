@@ -20,12 +20,12 @@ class ItemsController < ApplicationController
       else
         render :new
       end
-
-      #def show
-        
-      #end
-
     end
+    
+      def show
+        @item = Item.find(params[:id])
+      end
+
     private
 
     def item_params
@@ -33,6 +33,6 @@ class ItemsController < ApplicationController
     end
   
     #def set_item
-      #@item = Item.find(params[:id])
+     #@item = Item.find(params[:id])
     #end
   end
