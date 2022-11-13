@@ -49,8 +49,6 @@
 
 
 
-
-
 ## shippings table
 
 | Column      | Type       | Options                        |
