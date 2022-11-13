@@ -2,7 +2,12 @@ require 'rails_helper'
 
 RSpec.describe CredentialForm, type: :model do
   before do
-    @credential_form = FactoryBot.build(:credential_form)
+    @user = FactoryBot.create(:user)
+    @item = FactoryBot.build(:item)
+    @item.image = fixture_file_upload('public/images/test_image.png')
+    @item.save
+    @credential_form = FactoryBot.build(:credential_form, item_id: @item.id, user_id: @user.id)
+    sleep 0.1
   end
 
   describe '配送先情報の保存' do
@@ -97,6 +102,11 @@ RSpec.describe CredentialForm, type: :model do
       end
       it '電話番号が12桁以上あると保存できないこと' do
         @credential_form.phone = 12_345_678_910_123_111
+        @credential_form.valid?
+        expect(@credential_form.errors.full_messages).to include('Phone is invalid')
+      end
+      it '電話番号が9桁以下であると保存できないこと' do
+        @credential_form.phone = 12_345_678_9
         @credential_form.valid?
         expect(@credential_form.errors.full_messages).to include('Phone is invalid')
       end
