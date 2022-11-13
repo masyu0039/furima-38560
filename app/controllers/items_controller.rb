@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
       else
         render :new
       end       
-  end
+    end
 
   def edit
     if @item.user_id == current_user.id && @item.credential.nil?
