@@ -28,5 +28,5 @@ const pay = () => {
     });
   });
 };
-// payページを読み込んだ時に実行
+
 window.addEventListener("load", pay);
